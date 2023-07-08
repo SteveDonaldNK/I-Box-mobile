@@ -3,7 +3,7 @@ import { Login, Register, Home, History, Subscription, UserSettings } from '../c
 const Index = () => {
 
     return (
-        <History />
+        <UserSettings />
     )
 }
 

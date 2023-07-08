@@ -31,21 +31,21 @@ export default function Settings() {
         <View style={styles.iconButtonContainer}>
           <TouchableOpacity style={{justifyContent: 'space-between', ...styles.iconButton, ...styles.tab}}>
             <View style={styles.iconButton}>
-              <Profile width='38'/>
+              <Profile width='32'/>
               <Text style={styles.tabText}>Profil</Text>
             </View>
             <ChevronRight width='25'/>
           </TouchableOpacity>
           <TouchableOpacity style={{justifyContent: 'space-between', ...styles.iconButton, ...styles.tab}}>
             <View style={styles.iconButton}>
-              <SettingsIcon width='38' />
+              <SettingsIcon width='32' />
               <Text style={styles.tabText}>Préférences</Text>
             </View>
             <ChevronRight width='25'/>
           </TouchableOpacity>
           <TouchableOpacity style={{justifyContent: 'space-between', ...styles.iconButton, ...styles.tab}}>
             <View style={styles.iconButton}>
-              <Assistance width='38' />
+              <Assistance width='32' />
               <Text style={styles.tabText}>Assistance</Text>
             </View>
             <ChevronRight width='25'/>

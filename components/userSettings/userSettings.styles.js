@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontFamily: FONT.medium,
-    fontSize: 22,
+    fontSize: SIZES.xl + 2,
     marginLeft: 10,
   },
   tab: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   btnText: {
     color: COLORS.redColor,
     fontFamily: FONT.medium,
-    fontSize: 20,
+    fontSize: SIZES.xl,
     textAlign: 'center'
   }
 });
