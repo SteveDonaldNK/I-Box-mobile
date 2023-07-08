@@ -2,12 +2,9 @@ import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, ScrollVie
 import React from 'react'
 import { Stack } from 'expo-router'
 import { COLORS, FONT, images } from '../../constants'
-import Mail from '../../assets/icons/mail.svg'
-import Lock from '../../assets/icons/lock.svg'
-import Badge from '../../assets/icons/badge.svg'
-import Phone from '../../assets/icons/phone.svg'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import styles from './Register.styles'
-import { TouchableNativeFeedback } from 'react-native'
 
 export default function Register() {
 
@@ -26,23 +23,23 @@ export default function Register() {
 
         <View style={styles.form}>
             <View style={styles.inputContainer}>
-                <Badge stroke={COLORS.darkColor} height='28' width='28' strokeWidth='0'/>
+                <MaterialCommunityIcons name="badge-account-horizontal-outline" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Votre nom' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={styles.inputContainer}>
-                <Mail stroke={COLORS.darkColor} height='28' width='28'strokeWidth='0'/>
+                <Feather name="mail" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Votre adresse mail' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={styles.inputContainer}>
-                <Phone stroke={COLORS.darkColor} height='28' width='30' strokeWidth='0'/>
+                <Feather name="phone" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Votre numéro de telephone' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={styles.inputContainer}>
-                <Lock stroke={COLORS.darkColor} height='28' width='28'strokeWidth='0'/>
+                <Feather name="lock" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Choisir un mot de passe' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={styles.inputContainer}>
-                <Lock stroke={COLORS.darkColor} height='28' width='28'strokeWidth='0'/>
+                <Feather name="lock" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Confirmer le mot de passe' placeholderTextColor={COLORS.grayColor}/>
             </View>
         </View>

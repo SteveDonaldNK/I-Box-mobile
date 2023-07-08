@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   returnText: {
     fontFamily: FONT.medium,

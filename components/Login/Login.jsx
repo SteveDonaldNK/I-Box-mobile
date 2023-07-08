@@ -2,8 +2,7 @@ import { View, Text, SafeAreaView, TouchableOpacity, Image, TextInput, ScrollVie
 import React from 'react'
 import { Stack } from 'expo-router'
 import { COLORS, FONT, images } from '../../constants'
-import Mail from '../../assets/icons/mail.svg'
-import Lock from '../../assets/icons/lock.svg'
+import { Feather } from '@expo/vector-icons';
 import styles from './Login.styles'
 
 export default function Login() {
@@ -27,11 +26,11 @@ export default function Login() {
 
         <View style={styles.form}>
             <View style={{marginBottom: 30, ...styles.inputContainer}}>
-                <Mail stroke={COLORS.darkColor} height='28' width='28' strokeWidth='0'/>
+                <Feather name="mail" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Votre adresse mail' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={{marginBottom: 10, ...styles.inputContainer}}>
-                <Lock stroke={COLORS.darkColor} height='28' width='28'strokeWidth='0'/>
+                <Feather name="lock" size={24} color="black" />
                 <TextInput style={styles.input} placeholder='Votre mot de passe' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <TouchableOpacity><Text style={styles.reset}>mot de passe oublié ?</Text></TouchableOpacity>

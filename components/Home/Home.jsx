@@ -1,17 +1,16 @@
 import { SplashScreen, Stack , useRouter} from "expo-router";
-import { useState } from "react";
 import FullWidthImage from "react-native-fullwidth-image";
-import { View, ScrollView, SafeAreaView, Image, Text, TouchableOpacity } from "react-native";
-import NotificationIcon from '../../assets/icons/notification.svg';
-import ProfileIcon from '../../assets/icons/profile.svg';
+import { View, SafeAreaView, Text, TouchableOpacity } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import styles from "./Home.styles";
 
-import { COLORS, images, SIZES } from '../../constants/index';
+import { COLORS, images } from '../../constants/index';
 import ScreenHeadBtn from "./Header/ScreenHeadBtn";
 
 const Profile = () => (
     <View style={{width: '100%'}}>
-        <ProfileIcon height='100%' width='100%'/>
+        <Ionicons name="person-circle" size={40} color={COLORS.primary} />
     </View>
 )
 
@@ -30,7 +29,7 @@ const Home = () => {
                         <ScreenHeadBtn component={<Profile />}/>
                     ),
                     headerRight: () => (
-                        <ScreenHeadBtn component={<NotificationIcon height='75%' width='75%' stroke='#000' strokeWidth="1.8" />}/>
+                        <ScreenHeadBtn component={<FontAwesome5 name="bell" size={24} color="black" />}/>
                     )
                 }}
             />
@@ -43,7 +42,7 @@ const Home = () => {
                 </Text>
             </View>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity style={styles.btn} onPress={() => router.push('/cats')}>
                     <Text style={styles.btnText}>Demander un code de retrait</Text>
                 </TouchableOpacity>
             </View>

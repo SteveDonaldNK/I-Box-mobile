@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    gap: 8
   },
   returnText: {
     fontFamily: FONT.medium,

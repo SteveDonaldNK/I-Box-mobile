@@ -1,8 +1,8 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ScrollView} from 'react-native'
+import { Text, SafeAreaView, TouchableOpacity, ScrollView} from 'react-native'
 import React from 'react'
 import styles from './Subscription.styles'
+import { Octicons } from '@expo/vector-icons';
 import { Stack } from 'expo-router'
-import ChevronLeft from '../../assets/icons/chevron-left.svg'
 import { COLORS } from '../../constants'
 import ActiveSubscription from '../ActiveSubscription/ActiveSubscription'
 import PricingCards from '../PricingCards/PricingCards'
@@ -60,8 +60,8 @@ export default function Subscription() {
           headerStyle: { backgroundColor: COLORS.secondary },
           headerTitle: '',
           headerLeft: () => (
-            <TouchableOpacity style={styles.returnBtn}>
-              <ChevronLeft width='18' />
+            <TouchableOpacity style={{...styles.returnBtn, gap: 8}}>
+              <Octicons name="chevron-left" size={30} color="black" />
               <Text style={styles.returnText}>retour</Text>
             </TouchableOpacity>
           ),

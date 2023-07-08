@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { Stack } from 'expo-router'
 import Timeline from 'react-native-timeline-flatlist'
 import { COLORS } from '../../constants'
-import ChevronLeft from '../../assets/icons/chevron-left.svg'
-import Moreicon from '../../assets/icons/more.svg'
+import { Octicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import styles from './History.styles'
 
 export default function History() {
@@ -27,12 +27,6 @@ export default function History() {
         date: '01-02-2022',
       },
     ];
-
-    const iconColors = {
-      Ouverture: '#009688',
-      Fermeture: '#ff9797',
-      Bloqué: '#f44336',
-    };
   
     function renderDetail(rowData, sectionID, rowID) {
       
@@ -53,23 +47,12 @@ export default function History() {
               {timeData}
             </View>
             <View>
-              <Moreicon />
+              <Feather name="more-vertical" size={24} color="black" />
             </View>
           </View>
         </View>
       );
     }
-
-    const renderCircle = (rowData, sectionID, rowID) => {
-        if (rowData.eventType === 'Ouverture') {
-            setColor(COLORS.primaryColor)
-        } else if (rowData.eventType === 'Fermeture') {
-            setColor(COLORS.redColor)
-        }
-      
-
-        return <View style={{ width: 2, height: 2, borderRadius: 5, backgroundColor: color }} />;
-    };
   
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary, paddingHorizontal: '5%' }}>
@@ -80,7 +63,7 @@ export default function History() {
             headerTitle: '',
             headerLeft: () => (
               <TouchableOpacity style={styles.returnBtn}>
-                <ChevronLeft width='18' />
+                <Octicons name="chevron-left" size={30} color="black" />
                 <Text style={styles.returnText}>retour</Text>
               </TouchableOpacity>
             ),

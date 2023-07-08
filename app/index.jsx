@@ -1,9 +1,10 @@
+import { Redirect } from 'expo-router';
 import { Login, Register, Home, History, Subscription, UserSettings } from '../components/index';
 
 const Index = () => {
 
     return (
-        <UserSettings />
+        <Redirect href={'/HomeTab'} />
     )
 }
 
