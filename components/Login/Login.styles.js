@@ -68,11 +68,11 @@ const styles = StyleSheet.create({
   ,
   input: {
     flex: 1,
-    height: 40,
+    height: 32,
     marginLeft: 10,
     borderBottomWidth: 1.7,
-    fontSize: SIZES.xl,
-    fontFamily: FONT.medium,
+    fontSize: SIZES.md,
+    fontFamily: FONT.regular,
     paddingLeft: 5,
     borderColor: COLORS.darkColor,
   },
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     fontSize: SIZES.md,
     fontFamily: FONT.medium,
     textAlign: 'right',
-    color: COLORS.primary
+    color: COLORS.primary,
+    marginTop: 5
   }
 });
 

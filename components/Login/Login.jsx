@@ -27,11 +27,11 @@ export default function Login() {
 
         <View style={styles.form}>
             <View style={{marginBottom: 30, ...styles.inputContainer}}>
-                <Mail stroke={COLORS.darkColor} height='35' width='35' strokeWidth='0'/>
+                <Mail stroke={COLORS.darkColor} height='28' width='28' strokeWidth='0'/>
                 <TextInput style={styles.input} placeholder='Votre adresse mail' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <View style={{marginBottom: 10, ...styles.inputContainer}}>
-                <Lock stroke={COLORS.darkColor} height='35' width='35'strokeWidth='0'/>
+                <Lock stroke={COLORS.darkColor} height='28' width='28'strokeWidth='0'/>
                 <TextInput style={styles.input} placeholder='Votre mot de passe' placeholderTextColor={COLORS.grayColor}/>
             </View>
             <TouchableOpacity><Text style={styles.reset}>mot de passe oublié ?</Text></TouchableOpacity>

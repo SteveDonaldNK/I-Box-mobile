@@ -3,7 +3,8 @@ const COLORS = {
     secondary: "#FFF",
     darkColor: "#000",
     grayColor: "#9EA0A0",
-    redColor: '#EF5360'
+    redColor: '#EF5360',
+    cardColor: '#1B1E41'
 }
 
 const FONT = {
@@ -16,7 +17,7 @@ const SIZES = {
     sm: 14,
     md: 16,
     xl: 18,
-    xxl: 25,
+    xxl: 22,
 }
 
 const SHADOWS = {

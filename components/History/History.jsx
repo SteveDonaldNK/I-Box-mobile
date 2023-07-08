@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import { Stack } from 'expo-router'
 import Timeline from 'react-native-timeline-flatlist'
 import { COLORS } from '../../constants'
@@ -8,71 +8,92 @@ import Moreicon from '../../assets/icons/more.svg'
 import styles from './History.styles'
 
 export default function History() {
-    const data = [{
+    const [color, setColor] = useState(COLORS.primary);
+
+    const data = [
+      {
         eventType: 'Ouverture',
         notification: 'Boîte ouverte',
         date: '22-08-2001',
-    }, {
+      },
+      {
         eventType: 'Fermeture',
         notification: 'Boîte fermée',
         date: '06-12-2012',
-    }, {
+      },
+      {
         eventType: 'Bloqué',
         notification: 'Votre boîte est bloquée',
         date: '01-02-2022',
-    }]
+      },
+    ];
 
+    const iconColors = {
+      Ouverture: '#009688',
+      Fermeture: '#ff9797',
+      Bloqué: '#f44336',
+    };
+  
     function renderDetail(rowData, sectionID, rowID) {
-        let title = (
-            <View style={{flex: 1}}>
-                <Text style={styles.boldText}>{rowData.eventType}</Text>
-                <Text style={styles.font}>{rowData.notification}</Text>
+      
+      let title = (
+        <View style={{ flex: 1 }}>
+          <Text style={styles.boldText}>{rowData.eventType}</Text>
+          <Text style={styles.font}>{rowData.notification}</Text>
+        </View>
+      );
+      let timeData = <Text style={styles.font}>{rowData.date}</Text>;
+  
+      return (
+        <View style={styles.flexBox}>
+          {title}
+          <View style={styles.flexBox}>
+            <View>
+              <Text style={{ ...styles.boldText, textAlign: 'right' }}>Date</Text>
+              {timeData}
             </View>
-        )
-        let timeData = <Text style={styles.font}>{rowData.date}</Text>
-
-        return (
-            <View style={{...styles.flexBox}}>
-                {title}
-                <View style={styles.flexBox}>
-                    <View>
-                        <Text style={{...styles.boldText, textAlign: 'right'}}>Date</Text>
-                        {timeData}
-                    </View>
-                    <View>
-                        <Moreicon  />
-                    </View>
-                </View>
+            <View>
+              <Moreicon />
             </View>
-        )
+          </View>
+        </View>
+      );
     }
 
+    const renderCircle = (rowData, sectionID, rowID) => {
+        if (rowData.eventType === 'Ouverture') {
+            setColor(COLORS.primaryColor)
+        } else if (rowData.eventType === 'Fermeture') {
+            setColor(COLORS.redColor)
+        }
+      
+
+        return <View style={{ width: 2, height: 2, borderRadius: 5, backgroundColor: color }} />;
+    };
+  
     return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.secondary, paddingHorizontal: '5%'}}>
-        <Stack.Screen 
-            options={{
-                headerShadowVisible: false,
-                headerStyle: { backgroundColor: COLORS.secondary },
-                headerTitle: '',
-                headerLeft: () => (
-                    <TouchableOpacity style={styles.returnBtn}>
-                        <ChevronLeft width='18'/>
-                        <Text style={styles.returnText}>retour</Text>
-                    </TouchableOpacity>
-                )
-            }}
+      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary, paddingHorizontal: '5%' }}>
+        <Stack.Screen
+          options={{
+            headerShadowVisible: false,
+            headerStyle: { backgroundColor: COLORS.secondary },
+            headerTitle: '',
+            headerLeft: () => (
+              <TouchableOpacity style={styles.returnBtn}>
+                <ChevronLeft width='18' />
+                <Text style={styles.returnText}>retour</Text>
+              </TouchableOpacity>
+            ),
+          }}
         />
         <Text style={styles.heading}>Historique</Text>
-            <Timeline
-                // dotSize={10}
-                data={data}
-                showTime={false}
-                renderDetail={renderDetail}
-            />
-
-        <View>
-            <View style={styles.circle}></View>
-        </View>
-    </SafeAreaView>
-    )
-}
+        <Timeline
+          circleSize={14}
+          data={data}
+          showTime={false}
+          renderDetail={renderDetail}
+        />
+      </SafeAreaView>
+    );
+  }
+  

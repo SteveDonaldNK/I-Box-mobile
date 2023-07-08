@@ -70,10 +70,10 @@ const styles = StyleSheet.create({
   ,
   input: {
     flex: 1,
-    height: 40,
+    height: 32,
     marginLeft: 10,
     borderBottomWidth: 1.7,
-    fontSize: SIZES.xl,
+    fontSize: SIZES.md,
     fontFamily: FONT.regular,
     paddingLeft: 5,
     borderColor: COLORS.darkColor,
